@@ -70,10 +70,10 @@ list.isEmpty
 list.first
 list.last
 
-list.append("Pankaj")
-list.append("Nigam")
+list.append("Lokesh")
+list.append("Vyas")
 list.append("Bikash")
-list.append("ajaykash")
+list.append("Nilesh")
 
 list.count
 list.first?.value
