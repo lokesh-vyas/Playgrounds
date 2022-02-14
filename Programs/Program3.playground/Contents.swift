@@ -55,3 +55,4 @@ var greeting = "Hello, playground"
 //print(topprDivider(5))
 
 // Output: won't run as operator '/' cannot be applied to two 'T' operands, for this topprDivider<T> should be topprDivider<T:BinaryInteger>(_ value: T )
+

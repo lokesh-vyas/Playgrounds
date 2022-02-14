@@ -34,3 +34,17 @@ func createMaster() {
 
 createMaster()
 
+//...................................///......................
+class A {
+    var name = "Lokesh"
+    deinit {
+        print("Denit")
+    }
+}
+
+var a : A?
+var b : A?
+a = A()
+b = a
+a = nil
+print(b?.name)

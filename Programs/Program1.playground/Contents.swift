@@ -8,7 +8,7 @@ import UIKit
 //    let str = "Hello"
 //
 //    init() {
-//       // closure = helloWorld
+//       closure = helloWorld
 //    }
 //
 //    private func helloWorld() {
