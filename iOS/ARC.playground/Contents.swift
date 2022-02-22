@@ -48,3 +48,30 @@ a = A()
 b = a
 a = nil
 print(b?.name)
+
+
+//class Hello {
+//    var closure: (()->())?
+//
+//    let str = "Hello"
+//
+//    init() {
+//       closure = helloWorld      // Retain count is here
+//    }
+//
+//    private func helloWorld() {
+//        print("Hello World")
+//    }
+//
+//
+//    deinit {
+//        print("deinit")
+//    }
+//}
+//var hello: Hello? = Hello()
+//hello?.closure?()
+//hello = nil
+
+
+// to solve retain count
+// weak self at 59  clouser = { [weak self] self?.helloWorld() }
