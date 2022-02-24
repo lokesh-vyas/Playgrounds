@@ -2,21 +2,6 @@
 
 import UIKit
 
-//var threadSafeArray = [Any]()
-//let queue = DispatchQueue(label: "Thread-Safe",attributes: .concurrent)
-//
-//// write
-//func addElement(element:Any)  {
-//    queue.async(flags: .barrier) {
-//        threadSafeArray.append(element)
-//    }
-//}
-//
-//func read() -> Any {
-//    queue.sync {
-//        return threadSafeArray.first
-//    }
-//}
 
 
 // read -> sycn

@@ -18,7 +18,7 @@ class MyDispatchGroup {
     
     func notify(completion: @escaping () -> ()) {
         completionBlock = completion
-    }
+    } 
 }
 
 

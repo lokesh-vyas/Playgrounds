@@ -65,21 +65,6 @@ import UIKit
 //print(Array(number.joined()))
 //print(number.reduce([]) {$0 + $1})
 
-//let dispatchQueue = DispatchQueue(label: "my.Q")
-//func dispatchQueueCall() {
-//dispatchQueue.async {
-//    DispatchQueue.main.async {
-//        print("1")
-//    }
-//    DispatchQueue.main.sync {
-//        print("2")
-//    }
-//}
-//dispatchQueue.sync {
-//    print("3")
-//}
-//}
-//dispatchQueueCall()
 
 
 //var numberOfElement = 0

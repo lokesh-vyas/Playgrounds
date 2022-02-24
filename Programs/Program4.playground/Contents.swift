@@ -16,25 +16,6 @@ func arryPrint(arr:[Int],index:Int) ->Int? {
 print(arryPrint(arr: arr, index: 5))
 
 
-//let q = DispatchQueue(label: "custom",attributes: .concurrent)
-//
-//func printQ(){
-//    q.async {
-//        for i in 0..<10 {
-//            print("RED") // t 1
-//        }
-//    }
-//    q.sync {
-//        for i in 0..<10 {
-//            print("Green") // t 2
-//        }
-//    }
-//    q.async {
-//        for i in 0..<10 {
-//            print("Blue")
-//        }
-//    }
-//}
 
 
 let i = 11
