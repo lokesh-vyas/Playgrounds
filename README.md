@@ -21,6 +21,8 @@
   - Pair Find
   - Reverse Array
   - 3 Number sum
+  - Count Frequence
+  - Zero to begining  
 
 
 3. Interview Program 

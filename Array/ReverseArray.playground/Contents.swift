@@ -21,6 +21,20 @@ let arr = [1, 2, 3, 4, 5, 6]
 
 print(reversArray(arr: arr, start: 0, end: arr.count - 1))
 
+func reverseCheck(item1: [Int], item2: [Int]) -> Bool {
+    var status = false
+    for i in 0..<item1.count {
+        if item1[i] == item2[item2.count - 1 - i] {
+            status = true
+        } else {
+            status = false
+        }
+    }
+    return status
+}
+
+print(reverseCheck(item1: [3,2,1], item2: [1,2,3]))
+
 // Reverse String
 
 // First non repeated / repeated character.
