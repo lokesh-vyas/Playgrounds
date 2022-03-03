@@ -22,8 +22,9 @@
   - Reverse Array
   - 3 Number sum
   - Count Frequence
-  - Zero to begining  
-
+  - Zero to begining 
+  - WhiteSpace Trim String 
+  - Add One Number / Any Number represented as array of digits
 
 3. Interview Program 
     - ARC
@@ -37,9 +38,13 @@
     - Find Middle Node
     - Reverse Linked List
     - Palindrome
+    - Add to 2 Numbers 
   - Searching 
   - Sorting 
   - Stack / Queue 
-  - Tree / Mirror Tree
+  - Tree / Graph
+    - BST
+    - Mirror Tree
+    - Water-Island Problem
 
 5. Interview Questions

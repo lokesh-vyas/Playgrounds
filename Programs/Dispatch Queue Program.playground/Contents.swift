@@ -15,7 +15,7 @@ import UIKit
 //
 //print("done")
 
-    //////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 //
 //let q = DispatchQueue(label: "myQueue", attributes: .concurrent)
 //q.async {
@@ -118,12 +118,30 @@ import UIKit
 //    DispatchQueue.main.async {
 //        print("1")
 //    }
-////    DispatchQueue.main.sync {
-////        print("2")
-////    }
+//    DispatchQueue.main.sync {
+//        print("2")
+//    }
 //}
 //dispatchQueue.sync {
 //    print("3")
 //}
 //}
 //dispatchQueueCall()
+
+
+func method() {
+    print("A")
+    DispatchQueue.main.async {
+        print("B")
+        DispatchQueue.main.async {
+            print("C")
+        }
+        DispatchQueue.main.async {
+            print("D")
+        }
+    }
+    DispatchQueue.main.async {
+        print("E")
+    }
+}
+method()

@@ -79,3 +79,19 @@ import UIKit
 //let words = ["you","can","use","PhonePay","to","set","SIP"]
 //let slice = words[3..<4]
 //print(slice[0])
+
+
+//@dynamicMemberLookup
+//struct Wrapper<T> {
+//    let wrapped : T
+//    subscript<U>(dynamicMember keyPath:KeyPath<T,U>) -> U {
+//        wrapped[keyPath:keyPath]
+//    }
+//    init(_ wrapped: T) {
+//        self.wrapped = wrapped
+//    }
+//}
+//
+//let numbers = [1,2,3]
+//let wrappers = Wrapper(numbers)
+//wrappers.count

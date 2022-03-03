@@ -61,11 +61,27 @@ import UIKit
 //    }
 //}
 
+//
+//let words = ["you", "can", "use", "fedmobile", "to", "pay", "UPI"]
+//var slice = words[3..<4]
+//print("1 statement: \(slice.first ?? "")")
+//print("2 statement: \(slice)")
+//print("3 statement: \(slice[0])")
 
-let words = ["you", "can", "use", "fedmobile", "to", "pay", "UPI"]
-var slice = words[3..<4]
-print("1 statement: \(slice.first ?? "")")
-print("2 statement: \(slice)")
-print("3 statement: \(slice[0])")
 
 
+class Obj:NSObject {
+    var clouser : (() -> ())?
+    deinit {
+        print("Denit")
+    }
+}
+
+func execute() {
+    let obj = Obj()
+    obj.clouser = {
+        print(obj.description)
+    }
+    print("Method End")
+}
+execute()

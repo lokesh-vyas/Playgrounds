@@ -49,22 +49,22 @@ var array = [111,222,333,111, 333, 111, 000, 444, 777, 222]
 var ampersand : Int!
 var divide : Int!
 
-        let length = array.count
-        let temp = length * length
-        for i in 0..<temp {
-            if array[ i % length] == array[ i / length] {
-                
-                if i % length == i / length {
-                    continue
-                    
-                } else {
-                    print("\( i)==>\(i % length) :\(i / length) :\(array[i / length])")
-                    
-                }
-                
-            }
+let length = array.count
+let temp = length * length
+for i in 0..<temp {
+    if array[ i % length] == array[ i / length] {
+        
+        if i % length == i / length {
+            continue
+            
+        } else {
+            print("\( i)==>\(i % length) :\(i / length) :\(array[i / length])")
+            
         }
         
-        
+    }
+}
 
-    
+
+
+
