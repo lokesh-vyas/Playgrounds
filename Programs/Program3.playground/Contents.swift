@@ -56,3 +56,85 @@ var greeting = "Hello, playground"
 
 // Output: won't run as operator '/' cannot be applied to two 'T' operands, for this topprDivider<T> should be topprDivider<T:BinaryInteger>(_ value: T )
 
+
+class Emp {
+    var name : String
+    init(name : String) {
+        self.name = name
+    }
+}
+
+struct Clg {
+    var name : String
+    var emp : Emp?
+    init(name :String) {
+        self.name = name
+    }
+
+    mutating func changeName(name: String) {
+        self.name = name
+    }
+}
+
+var obj = Clg(name: "ITM")
+obj.changeName(name:"Rohit")
+print(obj.name)
+
+
+
+protocol Movable {
+    func walk()
+    
+}
+
+extension Movable {
+    func crawl() {
+       print("Default crawling")
+    }
+}
+
+struct Animal: Movable {
+    func walk() {
+        print("Animal is walking proudly")
+    }
+    func crawl() {
+        print("Animal is crawling silently")
+    }
+}
+
+
+let wolf: Movable = Animal()
+wolf.walk()
+wolf.crawl()
+
+// 1
+// 2 , wait
+// signal
+
+// semapore - 1
+// sharedResounce
+
+// write  // - 1 wait
+// signal
+
+// read
+
+
+var a = UIView()
+var b = UIView()
+var c = UIView()
+var d = UIView()
+
+a.addSubview(c)
+a.addSubview(d)
+b.addSubview(c)
+
+print(a.subviews.count)
+
+class Singleton {
+    var sharedInstanse = Singleton {
+        return Singleton()
+    }
+    private init() {}
+
+}

@@ -1,19 +1,19 @@
 import UIKit
 
-//let q = DispatchQueue(label: "myQueue", attributes: .concurrent)
-//q.async {
-//    print("work async start")
-//    q.sync {
-//        print("work sync in async")
-//    }
-//    print("work async end")
-//}
-//
-//q.sync {
-//    print("work sync")
-//}
-//
-//print("done")
+let q = DispatchQueue(label: "myQueue", attributes: .concurrent)
+q.async {
+    print("work async start")
+    q.sync {
+        print("work sync in async")
+    }
+    print("work async end")
+}
+
+q.sync {
+    print("work sync")
+}
+
+print("done")
 
 //////////////////////////////////////////////////////////////////////
 //
@@ -110,7 +110,8 @@ import UIKit
 //        }
 //    }
 //}
-
+//
+//print(printQ())
 
 //let dispatchQueue = DispatchQueue(label: "my.Q")
 //func dispatchQueueCall() {
@@ -129,19 +130,56 @@ import UIKit
 //dispatchQueueCall()
 
 
-func method() {
-    print("A")
-    DispatchQueue.main.async {
-        print("B")
-        DispatchQueue.main.async {
-            print("C")
-        }
-        DispatchQueue.main.async {
-            print("D")
-        }
-    }
-    DispatchQueue.main.async {
-        print("E")
-    }
-}
-method()
+//func method() {
+//    print("A")
+//    DispatchQueue.main.async {
+//        print("B")
+//        DispatchQueue.main.async {
+//            print("C")
+//        }
+//        DispatchQueue.main.async {
+//            print("D")
+//        }
+//    }
+//    DispatchQueue.main.async {
+//        print("E")
+//    }
+//}
+//method()
+
+
+//let privateQueue = DispatchQueue.init(label: "com.slice.test")
+//
+//       privateQueue.async {
+//           print("A")
+//       }
+//
+//       privateQueue.async {
+//           print("B")
+//       }
+//
+//       privateQueue.async {
+//           print("C")
+//       }
+//
+//
+//       privateQueue.async {
+//           print("D")
+//           privateQueue.sync {
+//               print("E")
+//           }
+//           print("F")
+//       }
+
+
+//print("Hellow")
+//DispatchQueue.main.async {
+//print("1")
+//}
+//DispatchQueue.main.sync {
+//print("2")
+//}
+//DispatchQueue.main.async {
+//print("3")
+//}
+//print("World")

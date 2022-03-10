@@ -79,9 +79,10 @@ class Obj:NSObject {
 
 func execute() {
     let obj = Obj()
-    obj.clouser = {
+    obj.clouser = { 
         print(obj.description)
     }
+    
     print("Method End")
 }
 execute()

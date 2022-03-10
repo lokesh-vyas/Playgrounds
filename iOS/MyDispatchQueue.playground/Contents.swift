@@ -52,4 +52,5 @@ func print1() {
     }
 }
 
-print1()
+//print1()
+

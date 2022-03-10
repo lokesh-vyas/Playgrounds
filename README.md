@@ -39,6 +39,7 @@
     - Reverse Linked List
     - Palindrome
     - Add to 2 Numbers 
+    - intersectPoint
   - Searching 
   - Sorting 
   - Stack / Queue 
