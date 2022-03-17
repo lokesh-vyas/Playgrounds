@@ -68,14 +68,14 @@ print(demo.kapsObj.authToken)       // 123
 print(demo.prp)                     // 123
 
 
-func increment(arr:[Int],byNumber:Int) {
-    var sum = 0
-    var cary = 0
-    for 0 in 0..<arr.coun {
-        sum = sum + (item *
-    }
-}
+//func increment(arr:[Int],byNumber:Int) {
+//    var sum = 0
+//    var cary = 0
+//    for 0 in 0..<arr.coun {
+//        sum = sum + (item *
+//    }
+//}
 
-let arr1 = [1,2,5]
-increment(arr: arr1, byNumber: 1)
+//let arr1 = [1,2,5]
+//increment(arr: arr1, byNumber: 1)
 

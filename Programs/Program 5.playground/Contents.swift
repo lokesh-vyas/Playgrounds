@@ -54,7 +54,7 @@ import UIKit
 //bar.failure = { bar.retry() }
 
 /////////
-///
+/////
 //let number = [[1,2,3],
 //              [4,5,6],
 //              [7,8,9]
@@ -62,7 +62,8 @@ import UIKit
 //
 //print(number.map{ $0 })
 //print(number.flatMap{ $0 })
-//print(Array(number.joined()))
+//print(number.compactMap{ $0 })
+////print(Array(number.joined()))
 //print(number.reduce([]) {$0 + $1})
 
 
@@ -77,7 +78,7 @@ import UIKit
 
 
 //let words = ["you","can","use","PhonePay","to","set","SIP"]
-//let slice = words[3..<4]
+//let slice = words[3..<5]
 //print(slice[0])
 
 

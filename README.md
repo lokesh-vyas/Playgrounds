@@ -13,6 +13,7 @@
   - MyDispatch Group 
   - Thread Safe 
   - Protocol
+  - Enum
   
 2. Array 
   - Find Common Element 
@@ -25,6 +26,7 @@
   - Zero to begining 
   - WhiteSpace Trim String 
   - Add One Number / Any Number represented as array of digits
+  - BST
 
 3. Interview Program 
     - ARC

@@ -215,3 +215,9 @@ var greeting = "Hello, playground"
 //    items.append(x) // Compile time error here.
 //  }
 //}
+
+let qu : DispatchQueue = DispatchQueue()
+
+qu.async {
+    print("A")
+}

@@ -84,7 +84,6 @@ print(obj.name)
 
 protocol Movable {
     func walk()
-    
 }
 
 extension Movable {
@@ -128,13 +127,7 @@ var d = UIView()
 a.addSubview(c)
 a.addSubview(d)
 b.addSubview(c)
+b.addSubview(d)
 
 print(a.subviews.count)
 
-class Singleton {
-    var sharedInstanse = Singleton {
-        return Singleton()
-    }
-    private init() {}
-
-}

@@ -2,9 +2,9 @@ import UIKit
 
 ///.............................../////////////////////.............
 
-let words = [25,2,3,57,38,41]
-let slice = words[0..<words.count]
-print(slice)
+//let words = [25,2,3,57,38,41]
+//let slice = words[0..<words.count]
+//print(slice)
 
 
 //@dynamicMemberLookup
@@ -49,16 +49,17 @@ print(slice)
 //var b = a
 //var c = b
 //var d = a
-//
+////
 //b.append(" World!!")
+//print(a , b ,c ,d )
 
 ///.............................../////////////////////.............
-//var thing = "cars"
-//let clouser = {
-//    print("I love \(thing)")
-//}
-//thing = "airplane"
-//clouser()
+var thing = "cars"
+let clouser = { 
+    print("I love \(thing)")
+}
+thing = "airplane"
+clouser()
 
 ///.............................../////////////////////.............
 //UIView.animate(withDuration: 3, animations: {

@@ -1,19 +1,19 @@
 import UIKit
 
-let q = DispatchQueue(label: "myQueue", attributes: .concurrent)
-q.async {
-    print("work async start")
-    q.sync {
-        print("work sync in async")
-    }
-    print("work async end")
-}
-
-q.sync {
-    print("work sync")
-}
-
-print("done")
+//let q = DispatchQueue(label: "myQueue", attributes: .concurrent)
+//q.async {
+//    print("work async start")
+//    q.sync {
+//        print("work sync in async")
+//    }
+//    print("work async end")
+//}
+//
+//q.sync {
+//    print("work sync")
+//}
+//
+//print("done")
 
 //////////////////////////////////////////////////////////////////////
 //
@@ -91,27 +91,36 @@ print("done")
 //    }
 //}
 
-//let q = DispatchQueue(label: "custom",attributes: .concurrent)
+let que = DispatchQueue(label: "custom")
+
+func printQ(){
+    que.sync {
+        print("Hekkk2 22")
+        que.async {
+            print("Hekkk")
+        }
+        print("Hekkk  111")
+    }
+    que.async {
+        for i in 0..<10 {
+            print(i) // t 1
+        }
+    }
+    print("Hek")
+    que.sync {
+        for i in 11..<20 {
+            print(i) // t 2
+        }
+    }
+    print("Hek 1")
+    que.async {
+        for i in 21..<30 {
+            print(i)
+        }
+    }
+}
 //
-//func printQ(){
-//    q.async {
-//        for i in 0..<10 {
-//            print("RED") // t 1
-//        }
-//    }
-//    q.sync {
-//        for i in 0..<10 {
-//            print("Green") // t 2
-//        }
-//    }
-//    q.async {
-//        for i in 0..<10 {
-//            print("Blue")
-//        }
-//    }
-//}
-//
-//print(printQ())
+print(printQ())
 
 //let dispatchQueue = DispatchQueue(label: "my.Q")
 //func dispatchQueueCall() {
