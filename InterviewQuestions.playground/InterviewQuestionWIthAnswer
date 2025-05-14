@@ -1,0 +1,351 @@
+// Swift & iOS Interview Questions and Answers
+
+// MARK: - 1. Why Swift is POP?
+Swift is Protocol-Oriented Programming (POP) because protocols are the primary tool to define interfaces and promote code reuse. Unlike traditional OOP where inheritance is key, Swift favors composition via protocols, making it modular, extensible, and testable.
+
+// MARK: - TableView vs ScrollView
+
+* **UITableView**: A subclass of UIScrollView for displaying a single column of rows, manages cell reuse.
+* **UIScrollView**: Allows scrolling of content larger than its frame, requires manual layout and management.
+
+// MARK: - Access Specifiers
+
+* **open** > **public** > **internal** (default) > **fileprivate** > **private**
+
+// MARK: - Tuple Comparison
+Tuples can be compared if they contain comparable types:
+
+```swift
+(1, "a") < (2, "b") // true
+```
+
+// MARK: - === vs !== vs ==
+
+* `===`, `!==` compare reference identity (class instances only).
+* `==` compares value equality.
+
+// MARK: - Ways to Pass Data Between ViewControllers
+
+1. Segue
+2. Delegate
+3. Closure
+4. NotificationCenter
+5. Combine
+6. Property Injection
+7. Coordinator Pattern
+
+// MARK: - View/App Lifecycle
+
+* View: `loadView` > `viewDidLoad` > `viewWillAppear` > `viewDidAppear` > ...
+* App: `didFinishLaunching` > `sceneWillConnect` > `sceneDidBecomeActive` > ...
+
+// MARK: - Initializer Types
+
+* Designated
+* Convenience
+* Required
+* Failable
+
+// MARK: - self vs Self
+
+* `self`: instance
+* `Self`: type itself
+
+// MARK: - Any vs AnyObject
+
+* `Any`: any type
+* `AnyObject`: any class type
+
+// MARK: - defer
+Executes code just before the function returns, LIFO order.
+
+// MARK: - extension
+Used to add functionality to existing types. Can add computed properties, methods, subscripts, but NOT stored properties.
+
+// MARK: - typealias
+Used to define an alias for an existing type.
+
+// MARK: - Data Storage in Swift
+
+1. UserDefaults
+2. Keychain
+3. CoreData
+4. FileManager
+5. SQLite
+6. Realm
+
+// MARK: - UserDefaults
+Key-value storage. Internally stored in `Library/Preferences/*.plist`
+
+// MARK: - CoreData
+ORM-like persistence framework for managing object graphs and storing data locally.
+
+// MARK: - Optionals
+
+* **Type**: `Optional<T>`
+* **Binding**: `if let`, `guard let`
+* **Chaining**: `person?.address?.city`
+* **Force Unwrap**: `!`, use cautiously
+
+// MARK: - ARC
+
+* Automatic memory management
+* Strong, Weak, Unowned references
+* Weak avoids retain cycles (esp. in closures)
+* IBOutlet: `weak` to prevent retain cycles
+
+// MARK: - Class vs Struct
+
+* Struct: value type, copied
+* Class: reference type
+* `inout`: pass by reference to a function
+* `mutating`: to modify struct
+* Copying a class: conform to `NSCopying` and implement `copy()`
+
+// MARK: - UI Concepts
+
+* **Content Hugging**: resistance to growing
+* **Compression Resistance**: resistance to shrinking
+* **Frame vs Bounds**: Frame in superview, Bounds in own coordinate
+* **Responder Chain**: Event delivery path (Button > VC > Window > AppDelegate)
+* **masksToBounds**: Clips sublayers, **clipsToBounds**: Clips subviews
+* **setNeedsLayout**: Marks for layout, **layoutIfNeeded**: Forces immediate layout
+* **Constraint Priority**: 1 (low) to 1000 (required)
+
+// MARK: - Properties
+
+* Stored, Computed, Lazy
+* `willSet`/`didSet`: for observing changes
+
+// MARK: - Threads / GCD / Queues
+
+* **GCD**: Lightweight, low-level concurrency
+* **OperationQueue**: OOP wrapper with more control
+* Types: main, global, custom
+* Dispatch Queues: serial vs concurrent
+* Thread-safe Singleton:
+
+```swift
+class Singleton {
+  static let shared = Singleton()
+  private init() {}
+}
+```
+
+// MARK: - Static vs Dynamic Dispatch
+
+* **Static**: at compile-time (`struct`, `final class`)
+* **Dynamic**: at runtime (class methods, Objective-C)
+
+// MARK: - Closures
+
+* Non-escaping (default)
+* Escaping (e.g., async work)
+* Capture list: `[weak self]`, `[unowned self]`
+
+// MARK: - Protocol / Delegate
+
+* Protocol defines blueprint
+* Delegates should be `weak` to avoid retain cycles
+
+// MARK: - URLSession
+
+* `URLSession.shared` or custom
+* Types: dataTask, uploadTask, downloadTask
+* CachePolicy
+* Configuration: default, ephemeral, background
+
+// MARK: - Programming Questions
+
+1. Range Sum:
+
+```swift
+let array = [1, 2, 3, 4, 5]
+let ranges = [[0,2], [0,3], [0,4]]
+let result = ranges.map { array[$0[0]...$0[1]].reduce(0, +) }
+```
+
+2. Intersection Point of Two Linked Lists:
+
+```swift
+func getIntersectionNode(_ headA: ListNode?, _ headB: ListNode?) -> ListNode? {
+    var a = headA, b = headB
+    while a !== b {
+        a = a == nil ? headB : a?.next
+        b = b == nil ? headA : b?.next
+    }
+    return a
+}
+```
+
+3. Middle Node of Linked List:
+
+```swift
+func middleNode(_ head: ListNode?) -> ListNode? {
+    var slow = head, fast = head
+    while fast != nil && fast?.next != nil {
+        slow = slow?.next
+        fast = fast?.next?.next
+    }
+    return slow
+}
+```
+
+4. Reverse Linked List:
+
+```swift
+func reverseList(_ head: ListNode?) -> ListNode? {
+    var prev: ListNode? = nil, current = head
+    while current != nil {
+        let next = current?.next
+        current?.next = prev
+        prev = current
+        current = next
+    }
+    return prev
+}
+```
+
+5. Find Pair in Array:
+
+```swift
+func hasPairWithSum(_ nums: [Int], _ sum: Int) -> Bool {
+    var set = Set<Int>()
+    for num in nums {
+        if set.contains(sum - num) { return true }
+        set.insert(num)
+    }
+    return false
+}
+```
+
+6. Merge Two Arrays:
+
+```swift
+let merged = (arr1 + arr2).sorted()
+```
+
+7. First Non-Repeated Character:
+
+```swift
+func firstUniqueChar(_ s: String) -> Character? {
+    let freq = s.reduce(into: [:]) { $0[$1, default: 0] += 1 }
+    return s.first { freq[$0] == 1 }
+}
+```
+
+8. Defer Output:
+
+```swift
+func printStuff() {
+    print("1")
+    defer {
+        defer { print("2") }
+        print("3")
+    }
+    print("4")
+}
+// Output: 1 4 3 2
+```
+
+9. Type casting issue:
+
+```swift
+let n1: Int = 1
+let n2: Float = 2.0
+let n3: Double = 3.34
+let result = Double(n1) + Double(n2) + n3
+```
+
+10. Value of length:
+
+```swift
+var arr1 = [1, 2, 3]
+var arr2 = arr1
+arr2.append(4)
+print(arr1.count) // 3
+```
+
+11. Enum with recursive case:
+
+```swift
+enum Example {
+  indirect case something(Int, Example)
+}
+```
+
+12. View compilation:
+
+```swift
+let view1 = UIView()
+view1.alpha = 0.5
+var view2 = UIView()
+view2.alpha = 0.5
+view2 = view1 // Yes, allowed if view2 is mutable
+```
+
+13. Smallest Missing Positive:
+
+```swift
+func firstMissingPositive(_ nums: [Int]) -> Int {
+    let set = Set(nums.filter { $0 > 0 })
+    for i in 1...nums.count + 1 where !set.contains(i) {
+        return i
+    }
+    return 1
+}
+```
+
+14. Number of Islands (DFS):
+
+```swift
+func numIslands(_ grid: inout [[Character]]) -> Int {
+    guard !grid.isEmpty else { return 0 }
+    var count = 0
+    for i in 0..<grid.count {
+        for j in 0..<grid[0].count {
+            if grid[i][j] == "1" {
+                dfs(&grid, i, j)
+                count += 1
+            }
+        }
+    }
+    return count
+}
+
+func dfs(_ grid: inout [[Character]], _ i: Int, _ j: Int) {
+    guard i >= 0, j >= 0, i < grid.count, j < grid[0].count, grid[i][j] == "1" else { return }
+    grid[i][j] = "0"
+    dfs(&grid, i+1, j)
+    dfs(&grid, i-1, j)
+    dfs(&grid, i, j+1)
+    dfs(&grid, i, j-1)
+}
+```
+
+// MARK: - SOLID Principles
+
+* **S**: Single Responsibility
+* **O**: Open-Closed
+* **L**: Liskov Substitution
+* **I**: Interface Segregation
+* **D**: Dependency Inversion
+
+// MARK: - IntStack Error Explanation
+
+```swift
+struct IntStack {
+  var items = [Int]()
+  func add(x: Int) {
+    items.append(x) // Error: Cannot mutate inside a `func` unless it's `mutating`
+  }
+}
+```
+
+**Fix**:
+
+```swift
+mutating func add(x: Int) {
+  items.append(x)
+}
+```
